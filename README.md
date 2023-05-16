@@ -8,6 +8,6 @@ Run the `TortoiseChat` file and enter the server IP and Port and enter your user
 Once you are logged in press start and start chatting
 ## Images
 Login Screen <br>
-![Login Screen](https://imgur.com/a/UNWYewu) <br>
+![Login Screen](https://i.imgur.com/q2ESPOy.png) <br>
 Chat room <br>
-![Chat room](https://imgur.com/a/I3DKP2S)
+![Chat room](https://i.imgur.com/K4xu5do.png)
