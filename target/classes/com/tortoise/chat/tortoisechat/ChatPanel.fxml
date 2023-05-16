@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.tortoise.chat.tortoisechat.ChatRoomController">
+   <children>
+      <TextArea fx:id="ChatField" editable="false" layoutX="7.0" layoutY="7.0" prefHeight="321.0" prefWidth="586.0" promptText="Chat will appear here">
+         <font>
+            <Font name="DejaVu Sans Bold" size="13.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="ChatInput" layoutX="120.0" layoutY="335.0" onKeyPressed="#onSendButtonClick" prefHeight="59.0" prefWidth="472.0" promptText="Enter a message" />
+      <Button fx:id="SendButton" layoutX="64.0" layoutY="335.0" mnemonicParsing="false" onAction="#onSendButtonClick" prefHeight="59.0" prefWidth="51.0" text="Send" />
+      <Button fx:id="StartButton" layoutX="7.0" layoutY="335.0" mnemonicParsing="false" onAction="#onStart" prefHeight="59.0" prefWidth="51.0" text="Start" />
+   </children>
+</Pane>
