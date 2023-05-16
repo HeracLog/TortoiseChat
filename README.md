@@ -7,7 +7,7 @@ Load the `Main.java` file in the ServerSide dirrectory
 Run the `TortoiseChat` file and enter the server IP and Port and enter your username <br>
 Once you are logged in press start and start chatting
 ## Images
-Login Screen <br>
-![Login Screen](https://i.imgur.com/q2ESPOy.png) <br>
-Chat room <br>
+-Login Screen <br>
+![Login Screen](https://i.imgur.com/q2ESPOy.png) <br><br>
+-Chat room <br>
 ![Chat room](https://i.imgur.com/K4xu5do.png)
