@@ -2,9 +2,9 @@
 Tortoise(Secure)Chat A TCP based chat app between clients with an innovative GUI (I know impressive lmao)
 ## How to use
 ### Server
-Load the `Main.java` file in the ServerSide dirrectory
+Load the `server.jar` and you started the server
 ### Client
-Run the `App.java` file and enter the IP and Port of the server and signup on it then login and chat.
+Run the `Tortoise.S.Chat.jar` file and enter the IP and Port of the server and signup on it then login and chat.
 ### Changelog
 - Redesigned the GUI.
 - Added a username and password dynamic for extra safety.
