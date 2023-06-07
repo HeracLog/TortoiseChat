@@ -1,5 +1,6 @@
 package com.tortoiseshell.tortoisechat;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -29,18 +31,31 @@ public class LoginController {
     @FXML
     private Button JoinButton,signup,confirmSignup;
     @FXML
-    private Pane loginPane,signupPane;
+    private Pane loginPane,signupPane,aniPane;
     @FXML
     private Label errorLabel,errorLabelSignup;
+    
 
     static String IP;
     static int PORT;
     static String Username;
     static Socket clienSocket;
     int passHash,usrHash;
+    TranslateTransition signUp_Login;
+    TranslateTransition login_SignUp;
 
 
-
+    public void initialize()
+    {
+        signUp_Login = new TranslateTransition();
+        login_SignUp = new TranslateTransition();
+        login_SignUp.setNode(aniPane);
+        login_SignUp.setByY(400);
+        login_SignUp.setDuration(Duration.millis(400));
+        signUp_Login.setNode(aniPane);
+        signUp_Login.setByY(-400);
+        signUp_Login.setDuration(Duration.millis(400));
+    }
 
     @FXML
     protected void onJoinButtonClick(ActionEvent event) throws IOException {
@@ -81,8 +96,9 @@ public class LoginController {
     @FXML 
     protected void onSignUp()
     {
-        loginPane.setVisible(false);
-        signupPane.setVisible(true);
+        // loginPane.setVisible(false);
+        // signupPane.setVisible(true);
+        signUp_Login.play();
         UsernameField.setText("");
         password.setText("");
         errorLabel.setVisible(false);
@@ -114,8 +130,9 @@ public class LoginController {
             int actionCode = in.readInt();
             if (actionCode == 0)
             {
-                loginPane.setVisible(true);
-                signupPane.setVisible(false);
+                // loginPane.setVisible(true);
+                // signupPane.setVisible(false);
+                login_SignUp.play();
                 errorLabelSignup.setVisible(false);
                 createUser.setText("");
                 createPass.setText("");
@@ -131,8 +148,9 @@ public class LoginController {
     @FXML
     protected void onBackLogin()
     {
-        loginPane.setVisible(true);
-        signupPane.setVisible(false);
+        // loginPane.setVisible(true);
+        // signupPane.setVisible(false);
+        login_SignUp.play();
         errorLabelSignup.setVisible(false);
         createUser.setText("");
         createPass.setText("");
