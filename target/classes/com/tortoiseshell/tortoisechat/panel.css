@@ -1,0 +1,12 @@
+.backgroundColor
+{
+    -fx-background-color: linear-gradient(to bottom, #65CDA7,#4FA384);
+}
+.backgroundColorForMainPanel
+{
+    -fx-background-color: linear-gradient(to bottom, #f5f1f1,#dadada);
+}
+.textFieldColor
+{
+    -fx-background-color: linear-gradient(to bottom, #fafafa,#f0f0f0);
+}
