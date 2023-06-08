@@ -12,8 +12,9 @@ Run the `Tortoise.S.Chat.jar` file and enter the IP and Port of the server and s
 - The server rememebers the clients and stores their credentials
 ## Images
 -Login Screen <br>
-![Login Screen](https://i.imgur.com/3rCEFej.png) <br><br>
+![Server Ip and Port](https://i.imgur.com/8EiqrPy.png)<br><br>
+![Login Screen](https://i.imgur.com/gOm2slD.png) <br><br>
 -Signup Screen <br>
-![Signup Screen](https://i.imgur.com/dL1nY7M.png) <br><br>
+![Signup Screen](https://i.imgur.com/N6VUO0r.png) <br><br>
 -Chat room <br>
 ![Chat room](https://i.imgur.com/W8rgXyy.png)
