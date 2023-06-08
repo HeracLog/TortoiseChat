@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -29,9 +30,11 @@ public class LoginController {
     @FXML
     private PasswordField password,createPass,confirmPass;
     @FXML
-    private Button JoinButton,signup,confirmSignup;
+    private Button JoinButton,signup,confirmSignup,enterButton;
     @FXML
-    private Pane loginPane,signupPane,aniPane;
+    private Pane loginPane,signupPane,aniPane,serverPane;
+    @FXML
+    private SplitPane backPane;
     @FXML
     private Label errorLabel,errorLabelSignup;
     
@@ -41,14 +44,37 @@ public class LoginController {
     static String Username;
     static Socket clienSocket;
     int passHash,usrHash;
-    TranslateTransition signUp_Login;
-    TranslateTransition login_SignUp;
-
+    TranslateTransition signUp_Login,login_SignUp, portEnter,portBack,logSinPanelEnter,logSinPanelBack,backEnter,backBack;
+    boolean moveServerRight = true;
 
     public void initialize()
     {
         signUp_Login = new TranslateTransition();
         login_SignUp = new TranslateTransition();
+        portBack = new TranslateTransition();
+        portEnter = new TranslateTransition();
+        logSinPanelBack = new TranslateTransition();
+        logSinPanelEnter = new TranslateTransition();
+        backBack = new TranslateTransition();
+        backEnter = new TranslateTransition();
+        backEnter.setNode(backPane);
+        backEnter.setByX(-503/2);
+        backEnter.setDuration(Duration.millis(400));
+        backBack.setNode(backPane);
+        backBack.setByX(503/2);
+        backBack.setDuration(Duration.millis(400));
+        portEnter.setNode(serverPane);
+        portEnter.setByX(13-130);
+        portEnter.setDuration(Duration.millis(400));
+        portBack.setNode(serverPane);
+        portBack.setByX(130-13);
+        portBack.setDuration(Duration.millis(400));
+        logSinPanelEnter.setNode(aniPane);
+        logSinPanelEnter.setByX(259-503);
+        logSinPanelEnter.setDuration(Duration.millis(400));
+        logSinPanelBack.setNode(aniPane);
+        logSinPanelBack.setByX(503-259);
+        logSinPanelBack.setDuration(Duration.millis(400));
         login_SignUp.setNode(aniPane);
         login_SignUp.setByY(400);
         login_SignUp.setDuration(Duration.millis(400));
@@ -57,6 +83,30 @@ public class LoginController {
         signUp_Login.setDuration(Duration.millis(400));
     }
 
+    @FXML
+    protected void onEnter()
+    {
+        if (moveServerRight)
+        {
+            ServerIPField.setEditable(false);
+            ServerPortField.setEditable(false);
+            enterButton.setText("Back");
+            backEnter.play();
+            portEnter.play();
+            logSinPanelEnter.play();
+            moveServerRight = false;
+        }
+        else
+        {
+            ServerIPField.setEditable(true);
+            ServerPortField.setEditable(true);  
+            enterButton.setText("Enter");
+            backBack.play();
+            portBack.play();
+            logSinPanelBack.play();
+            moveServerRight = true; 
+        }
+    }
     @FXML
     protected void onJoinButtonClick(ActionEvent event) throws IOException {
         IP = ServerIPField.getText().trim();

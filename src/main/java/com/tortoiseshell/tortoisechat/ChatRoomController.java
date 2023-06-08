@@ -40,7 +40,7 @@ public class ChatRoomController {
     
     @FXML
     protected void onSendButtonClick(KeyEvent k) throws IOException {
-        if (k == null || k.getCode() == KeyCode.ENTER) {
+        if (ChatInput.getText() != null && (k == null || k.getCode() == KeyCode.ENTER)) {
             outputStream.writeUTF(Username + " : " + ChatInput.getText());
             outputStream.flush();
             ChatInput.setText("");

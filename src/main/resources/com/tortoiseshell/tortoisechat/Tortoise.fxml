@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="503.0" styleClass="backgroundColorForMainPanel" stylesheets="@panel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tortoiseshell.tortoisechat.LoginController">
    <children>
-      <Pane fx:id="aniPane" layoutX="261.0" layoutY="-1.0" prefHeight="900.0" prefWidth="244.0">
+      <Pane fx:id="aniPane" layoutX="503.0" prefHeight="900.0" prefWidth="244.0">
          <children>
             <Pane fx:id="signupPane" layoutY="400.0" prefHeight="405.0" prefWidth="244.0">
                <children>
@@ -114,7 +114,7 @@
             </Pane>
          </children>
       </Pane>
-      <SplitPane prefHeight="405.0" prefWidth="260.0" styleClass="backgroundColor" stylesheets="@panel.css">
+      <SplitPane fx:id="backPane" prefHeight="405.0" prefWidth="503.0" styleClass="backgroundColor" stylesheets="@panel.css">
          <effect>
             <DropShadow />
          </effect>
@@ -124,44 +124,56 @@
             <Font name="Cantarell Regular" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="25.0" layoutY="14.0" prefHeight="77.0" prefWidth="213.0" text="TortoiseChat" textAlignment="CENTER">
-         <font>
-            <Font name="Cantarell Extra Bold" size="33.0" />
-         </font>
-         <effect>
-            <DropShadow height="41.76" radius="15.932499999999997" width="23.97">
-               <color>
-                  <Color red="0.6447368264198303" green="0.6447368264198303" blue="0.6447368264198303" opacity="0.6700000166893005" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Label>
-      <TextField fx:id="ServerPortField" layoutX="51.0" layoutY="192.0" promptText="8181" styleClass="textFieldColor">
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color opacity="0.27969348430633545" />
-               </color>
-            </DropShadow>
-         </effect>
-         <font>
-            <Font name="Cantarell Regular" size="13.0" />
-         </font></TextField>
-      <TextField fx:id="ServerIPField" layoutX="51.0" layoutY="115.0" promptText="localhost" styleClass="textFieldColor">
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color opacity="0.27203065156936646" />
-               </color>
-            </DropShadow>
-         </effect>
-         <font>
-            <Font name="Cantarell Regular" size="13.0" />
-         </font></TextField>
-      <Label layoutX="96.0" layoutY="83.0" text="Server IP">
-         <font>
-            <Font name="Cantarell Regular" size="13.0" />
-         </font></Label>
-      <Label layoutX="87.0" layoutY="163.0" text="Server port" />
+      <Pane fx:id="serverPane" layoutX="130.0" layoutY="43.0" prefHeight="320.0" prefWidth="244.0">
+         <children>
+            <Label layoutX="16.0" layoutY="25.0" prefHeight="77.0" prefWidth="213.0" text="TortoiseChat" textAlignment="CENTER">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="33.0" />
+               </font>
+               <effect>
+                  <DropShadow height="41.76" radius="15.932499999999997" width="23.97">
+                     <color>
+                        <Color red="0.6447368264198303" green="0.6447368264198303" blue="0.6447368264198303" opacity="0.6700000166893005" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="93.0" layoutY="93.0" text="Server IP">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ServerIPField" layoutX="34.0" layoutY="119.0" promptText="localhost" styleClass="textFieldColor">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.27203065156936646" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="88.0" layoutY="160.0" text="Server port" />
+            <TextField fx:id="ServerPortField" layoutX="34.0" layoutY="187.0" promptText="8181" styleClass="textFieldColor">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.27969348430633545" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="enterButton" layoutX="97.0" layoutY="241.0" mnemonicParsing="false" onAction="#onEnter" styleClass="backgroundColorForMainPanel" stylesheets="@panel.css" text="Enter">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </Pane>
