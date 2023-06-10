@@ -10,3 +10,11 @@
 {
     -fx-background-color: linear-gradient(to bottom, #fafafa,#f0f0f0);
 }
+.textarea
+{
+    area_color : linear-gradient(to bottom, #fafafa,#f0f0f0);
+}
+.textarea .content
+{
+    -fx-background-color : area_color;
+}

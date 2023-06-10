@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColorForMainPanel" stylesheets="@panel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tortoiseshell.tortoisechat.PrimaryController">
+   <children>
+      <Pane fx:id="logPane" layoutX="600.0" prefHeight="400.0" prefWidth="309.0" styleClass="backgroundColorForMainPanel">
+         <children>
+            <TextArea fx:id="logArea" editable="false" layoutX="17.0" layoutY="14.0" prefHeight="376.0" prefWidth="281.0" styleClass="textarea">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextArea>
+         </children>
+      </Pane>
+      <Pane fx:id="backPane" layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@panel.css">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="optionPane" layoutX="167.0" layoutY="21.0" prefHeight="359.0" prefWidth="267.0">
+         <children>
+            <Label layoutX="91.0" layoutY="163.0" text="Username">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="durationField" disable="true" layoutX="14.0" layoutY="189.0" prefHeight="26.0" prefWidth="63.0" styleClass="backgroundColorForMainPanel">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="ban" disable="true" layoutX="136.0" layoutY="258.0" mnemonicParsing="false" onAction="#wip" prefHeight="26.0" prefWidth="104.0" styleClass="backgroundColorForMainPanel" text="Ban">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="errorLabel" layoutX="89.0" layoutY="274.0" text="Error Message" textFill="RED" visible="false">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="startButton" layoutX="152.0" layoutY="319.0" mnemonicParsing="false" onAction="#onStart" prefHeight="26.0" prefWidth="71.0" styleClass="backgroundColorForMainPanel" text="Start">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="stopButton" disable="true" layoutX="36.0" layoutY="319.0" mnemonicParsing="false" onAction="#onStop" prefHeight="26.0" prefWidth="71.0" styleClass="backgroundColorForMainPanel" text="Stop">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="18.0" layoutY="163.0" text="Duration">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField" disable="true" layoutX="91.0" layoutY="189.0" styleClass="backgroundColorForMainPanel">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="mute" disable="true" layoutX="19.0" layoutY="258.0" mnemonicParsing="false" onAction="#wip" prefHeight="26.0" prefWidth="104.0" styleClass="backgroundColorForMainPanel" text="Mute">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="48.0" layoutY="28.0" text="Tortoise Server">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="portField" layoutX="99.0" layoutY="113.0" prefHeight="26.0" prefWidth="63.0" styleClass="backgroundColorForMainPanel">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="118.0" layoutY="85.0" text="Port">
+               <font>
+                  <Font name="Cantarell Regular" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>
